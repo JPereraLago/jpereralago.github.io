@@ -1,0 +1,131 @@
+/* styles.css */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #007BFF;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    box-sizing: border-box;
+}
+
+.navbar .logo span {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.navbar .menu {
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .menu a {
+    padding: 10px 15px;
+    line-height: 30px;
+    text-decoration: none;
+    color: white;
+}
+
+.navbar .menu a:hover {
+    text-decoration: underline;
+}
+
+.navbar .menu a.active {
+    font-weight: bold;
+    color: #007BFF;
+    background-color: white;
+    border-radius: 5px;
+}
+
+.content {
+    margin-top: 60px;
+    padding: 20px;
+}
+
+/* Estilos generales para las secciones */
+.general-section {
+    display: flex;
+    margin: 20px 0;
+    border-bottom: 1px solid #ddd; /* Línea entre secciones */
+    padding: 20px;
+}
+
+/* Estilo para la columna de la izquierda (Año) */
+.general-section .left {
+    flex: 0 0 20%; /* Ocupa el 20% */
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    padding-right: 20px;
+}
+
+.general-section .left img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+}
+
+/* Estilo para la columna de la derecha (Contenido) */
+.general-section .right {
+    flex: 1; /* Ocupa el 80% restante */
+    padding-left: 20px;
+}
+
+.general-section h2 {
+    font-size: 1.5rem;
+    color: #007BFF; /* Azul para el título de la publicación */
+}
+
+.general-section p {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin: 5px 0;
+}
+
+.general-section hr {
+    margin: 10px 0;
+    border: 1px solid #ddd; /* Línea horizontal entre artículos */
+}
+
+/* Estilo para el botón */
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
+}
+
+/* Estilo para el botón al pasar el ratón (hover) */
+.button:hover {
+    background-color: #0056b3;
+}
+
+.separator {
+    border: 1px solid #ccc;
+    margin: 20px 0;
+}
+
+h1 {
+    color: #007BFF;
+    font-size: 2.5rem;
+}
+
+h2 {
+    color: #007BFF;
+    font-size: 1.5rem;
+}
