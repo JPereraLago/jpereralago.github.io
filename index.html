@@ -10,10 +10,10 @@
 <body>
 
     <!-- Barra de navegación fija -->
+
     <nav class="navbar">
-        <div class="logo">
-            <span>Javier Perera-Lago</span>
-        </div>
+        <div class="logo"><span>Javier Perera-Lago</span></div>
+        <button class="hamburger" aria-label="Menu">☰</button>
         <div class="menu">
             <a href="index.html" class="active">About Me</a>
             <a href="publications.html">Publications</a>
@@ -57,6 +57,13 @@
         </section>
 
     </div>
+
+<script>
+    document.querySelector('.hamburger').addEventListener('click', function() {
+        this.textContent = this.textContent === '☰' ? '×' : '☰';
+        document.querySelector('.menu').classList.toggle('active');
+    });
+</script>
 
 </body>
 </html>

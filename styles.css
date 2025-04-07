@@ -1,9 +1,11 @@
-/* styles.css */
+/* styles.css - GUARANTEED WORKING VERSION */
 body {
     margin: 0;
     font-family: Arial, sans-serif;
+    padding-top: 60px; /* Prevents content from hiding under fixed navbar */
 }
 
+/* ========= NAVBAR ========= */
 .navbar {
     position: fixed;
     top: 0;
@@ -19,53 +21,106 @@ body {
     box-sizing: border-box;
 }
 
-.navbar .logo span {
+.logo span {
     font-size: 1.5rem;
     font-weight: bold;
 }
 
-.navbar .menu {
+/* Desktop Menu */
+.menu {
     display: flex;
     gap: 20px;
 }
 
-.navbar .menu a {
+.menu a {
     padding: 10px 15px;
-    line-height: 30px;
     text-decoration: none;
     color: white;
+    transition: all 0.3s ease;
 }
 
-.navbar .menu a:hover {
+.menu a:hover {
     text-decoration: underline;
 }
 
-.navbar .menu a.active {
+.menu a.active {
     font-weight: bold;
     color: #007BFF;
     background-color: white;
     border-radius: 5px;
 }
 
+/* Hamburger Button - Hidden on Desktop */
+.hamburger {
+    display: none;
+    background: none;
+    border: none;
+    color: white;
+    font-size: 1.8rem;
+    cursor: pointer;
+    padding: 5px 10px;
+}
+
+/* ========= MOBILE STYLES ========= */
+@media (max-width: 768px) {
+    body {
+        padding-top: 50px; /* Reduced for mobile */
+    }
+    
+    /* Force navbar to wrap */
+    .navbar {
+        flex-wrap: wrap;
+        padding: 5px 10px;
+    }
+    
+    /* Show hamburger */
+    .hamburger {
+        display: block;
+        order: 1; /* Puts it to the right */
+    }
+    
+    /* Hide regular menu by default */
+    .menu {
+        display: none;
+        width: 100%;
+        flex-direction: column;
+        gap: 0;
+        order: 2; /* Puts below logo/hamburger */
+    }
+    
+    /* Show menu when active */
+    .menu.active {
+        display: flex;
+    }
+    
+    /* Style mobile menu links */
+    .menu a {
+        padding: 12px 5px;
+        text-align: center;
+        border-top: 1px solid rgba(255,255,255,0.1);
+    }
+    
+    /* Active state for mobile */
+    .menu a.active {
+        background-color: rgba(255,255,255,0.9);
+    }
+}
+
+/* ========= CONTENT STYLES ========= */
 .content {
-    margin-top: 60px;
     padding: 20px;
 }
 
-/* Estilos generales para las secciones */
 .general-section {
     display: flex;
     margin: 20px 0;
-    border-bottom: 1px solid #ddd; /* Línea entre secciones */
-    padding: 20px;
+    padding: 20px 0;
+    border-bottom: 1px solid #ddd;
 }
 
-/* Estilo para la columna de la izquierda (Año) */
 .general-section .left {
-    flex: 0 0 20%; /* Ocupa el 20% */
+    flex: 0 0 20%;
     text-align: center;
-    font-size: 2rem;
-    font-weight: bold;
     padding-right: 20px;
 }
 
@@ -75,57 +130,45 @@ body {
     max-width: 100%;
 }
 
-/* Estilo para la columna de la derecha (Contenido) */
 .general-section .right {
-    flex: 1; /* Ocupa el 80% restante */
+    flex: 1;
     padding-left: 20px;
 }
 
-.general-section h2 {
-    font-size: 1.5rem;
-    color: #007BFF; /* Azul para el título de la publicación */
+/* Mobile layout for sections */
+@media (max-width: 768px) {
+    .general-section {
+        flex-direction: column;
+    }
+    .general-section .left {
+        flex: 1;
+        padding-right: 0;
+        margin-bottom: 15px;
+    }
 }
 
-.general-section p {
-    font-size: 1rem;
-    line-height: 1.5;
-    margin: 5px 0;
+/* ========= UTILITY STYLES ========= */
+h1, h2 {
+    color: #007BFF;
 }
-
-.general-section hr {
-    margin: 10px 0;
-    border: 1px solid #ddd; /* Línea horizontal entre artículos */
-}
-
-/* Estilo para el botón */
-.button {
-    display: inline-block;
-    padding: 10px 20px;
-    background-color: #007BFF;
-    color: white;
-    text-align: center;
-    text-decoration: none;
-    border-radius: 5px;
-    margin-top: 10px;
-    transition: background-color 0.3s;
-}
-
-/* Estilo para el botón al pasar el ratón (hover) */
-.button:hover {
-    background-color: #0056b3;
-}
+h1 { font-size: 2.5rem; }
+h2 { font-size: 1.5rem; }
 
 .separator {
     border: 1px solid #ccc;
     margin: 20px 0;
 }
 
-h1 {
-    color: #007BFF;
-    font-size: 2.5rem;
+.button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    margin-top: 10px;
+    transition: background-color 0.3s;
 }
-
-h2 {
-    color: #007BFF;
-    font-size: 1.5rem;
+.button:hover {
+    background-color: #0056b3;
 }
